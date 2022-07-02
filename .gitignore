@@ -1,0 +1,9 @@
+*.ipynb_checkpoints*
+wandb/
+lightning_logs/
+.dvc/
+data/*
+dataset/
+.vscode
+*__pycache__*
+

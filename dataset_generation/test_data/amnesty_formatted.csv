@@ -1,0 +1,23 @@
+poi_id,source,id_within_source,lat,lon,geometry,description
+1,Amnesty,"Giwa Barracks - Prison compound, metal roof structures around",11.79831999977345,13.176664587401,POINT (13.176664587401 11.79831999977345),
+2,Amnesty,"Mucojo, Mozambique - metal and thatch roofs, close to water",-12.06737518849668,40.49025293645589,POINT (40.49025293645589 -12.06737518849668),
+3,Amnesty,"Stepanakert, Azerbaijan - mountainous town subject to seasonality",39.81736580333064,46.76834004651977,POINT (46.76834004651977 39.81736580333064),
+4,Amnesty,Juba International Airport,4.867959539409399,31.60568163184638,POINT (31.60568163184638 4.867959539409399),
+5,Amnesty,"Al Hudaydah, Yemen: Farms subject to seasonality",14.79005220687913,43.13080771310046,POINT (43.13080771310046 14.79005220687913),
+6,Amnesty,"Camp 25, North Korea- Gulag",41.83642203927617,129.7229381941718,POINT (129.7229381941718 41.83642203927617),
+7,Amnesty,"Xinjiang, China- continuing construction of detention facilities",37.22756306880804,79.33854279415051,POINT (79.33854279415051 37.22756306880804),
+8,Amnesty,Brazil-Jaci_Deforestation_Cattle,-10.03920158001086,-64.31949764612094,POINT (-64.31949764612094 -10.03920158001086),
+9,Amnesty,"Palestine - Gaza (companies don't show high res of Israel/Palestine), razing structures, etc.",31.28650342802677,34.27344609986951,POINT (34.27344609986951 31.28650342802677),
+10,Amnesty,"Cambodia- Prey Lang deforestation, selective logging",13.15029416996765,105.8693915674488,POINT (105.8693915674488 13.15029416996765),
+11,Amnesty,"Bangladesh- Kutapalong Refugee camp: Hills, tents, density of structures",21.20788120172067,92.1623698218641,POINT (92.1623698218641 21.20788120172067),
+12,Amnesty,"Syria- Idlib border camps everywhere, season agriculture changes",36.24433068862696,36.75237412312968,POINT (36.75237412312968 36.24433068862696),
+13,Amnesty,"Nigeria- Monguno IDP camp, lots of seasonal flooding",12.6724687919146,13.61873561205635,POINT (13.61873561205635 12.6724687919146),
+14,Amnesty,"Ethiopia-Eritrea border area - large military vehicles, berms, possible damage, etc.(this is form 2020/2021, but has also happened historically)",14.43192992412279,39.62282740448709,POINT (39.62282740448709 14.43192992412279),
+15,Amnesty,"Ethiopia-Sudan border, - contentious border with a 'breadbasket' for agriculture",13.96482701695755,36.59254503675758,POINT (36.59254503675758 13.96482701695755),Expect fighting over border (west of May Cadera) to cause problems with harvesting/planting agricultue. May Cadera is in the middle and is seeing sporadic burning of structures in the town. The 'border' area with Sudan between here and Abdurafi is a larger area that needs focus. 
+16,Amnesty,"Venezuela - Orinoco mining, Las Claritas",6.215514766222845,-61.43409370232497,POINT (-61.43409370232497 6.215514766222845),This whole area is massive: https://storymaps.arcgis.com/stories/6f5dd5b0c888413eb298e3ac2389dce4 Many South American open source remote sensig experts that could really use higher resolution to document this massive environmental/human rights issue. 
+17,Amnesty,USA- Lousiana - 'Cancer Alley',30.19953920301372,-90.99423594161247,POINT (-90.99423594161249 30.19953920301372),"This is more of an airquality issues, maybe poisoning the soil/water. Not sure if it is a good contender. "
+18,Amnesty,USA - migrant camps on border,26.09045938022273,-98.00185926312344,POINT (-98.00185926312344 26.09045938022273),
+19,Amnesty,"Myanmar- Kachin State, fighting/burning/aerial bombing",22.95168343502858,97.7642877757077,POINT (97.7642877757077 22.95168343502858),
+20,Amnesty,"Myanmar- Rakhine: Coup could lead to more burning, military movement",20.82115985956621,92.38369129672924,POINT (92.38369129672925 20.82115985956621),
+21,Amnesty,"Burkina Faso/Sahel region -very little imagery coverage and lots of fighting, burning, people movement",14.20657414132027,-1.850894468230633,POINT (-1.850894468230633 14.20657414132027),"More remote villages, the better since many aren't even mapped"
+22,Amnesty,"NIgeria - NIger Delta, oil spills, environmental destruction form spills",4.443765012656978,6.365249737836423,POINT (6.365249737836423 4.443765012656978),
