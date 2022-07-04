@@ -6,7 +6,7 @@ This is the code repository for the WorldStrat dataset, used to generate the dat
 Follow the Dataset Exploration notebook, or:
 - [Download and install Miniforge](https://github.com/conda-forge/miniforge/releases/tag/4.12.0-2).
 - Clone the repository: `git clone https://github.com/worldstrat/worldstrat`.
-- Install the environment: `mamba env create -n worldstrat --file requirements.yml`.
+- Install the environment: `mamba env create -n worldstrat --file environment.yml`.
 - [Download the dataset from Kaggle.](https://www.kaggle.com/datasets/jucor1/worldstrat)
 - Create an empty `dataset` folder in the repository root and unpack the dataset there.
 - Run the `Dataset Exploration` notebook, or any of the other notebooks, using the `worldstrat` environment.
