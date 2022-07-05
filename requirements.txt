@@ -21,3 +21,4 @@ lightning-bolts
 eo-learn
 pytorch-msssim
 global_land_mask
+opencv-python==4.5.5.64
