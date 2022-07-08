@@ -7,7 +7,7 @@ Follow the Dataset Exploration notebook, or:
 - [Download and install Miniforge](https://github.com/conda-forge/miniforge/releases/tag/4.12.0-2).
 - Clone the repository: `git clone https://github.com/worldstrat/worldstrat`.
 - Install the environment: `mamba env create -n worldstrat --file environment.yml`.
-- [Download the dataset from Kaggle.](https://www.kaggle.com/datasets/jucor1/worldstrat)
+- [Download the dataset from Zenodo](https://zenodo.org/deposit/6810792) , or [from Kaggle.](https://www.kaggle.com/datasets/jucor1/worldstrat).
 - Create an empty `dataset` folder in the repository root and unpack the dataset there.
 - Run the `Dataset Exploration` notebook, or any of the other notebooks, using the `worldstrat` environment.
 
@@ -61,3 +61,26 @@ After that, you can also check out our source code which contains notebooks that
 - The high-resolution Airbus imagery is distributed, with authorization from Airbus, under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
 - The labels, Sentinel2 imagery, and trained weights are released under Creative Commons with Attribution 4.0 International (CC BY 4.0).
 - This source code repository under 3-Clause BSD license.
+
+# How to cite
+
+If you use this package or the associated dataset, please kindly cite these following BibTeX entries:
+
+```
+@article{cornebise_free_2022,
+  title = {Free {{High-Resolution Satellite Imagery}}: {{The WorldStrat Dataset}}},
+  author = {Cornebise, Julien and Orsolic, Ivan and Kalaitzis, Freddie},
+  year = {2022},
+  month = jul,
+  journal = {Submitted, under review, arxiv preprint upcoming}
+}
+
+@article{cornebise_worldstrat_zenodo_2022,
+  title = {The {{WorldStrat Dataset}}},
+  author = {Cornebise, Julien and Orsolic, Ivan and Kalaitzis, Freddie},
+  year = {2022},
+  month = jul,
+  journal = {Dataset on Zendodo},
+  doi = {10.5281/zenodo.6810792}
+}
+```
