@@ -1,6 +1,6 @@
 # The WorldStrat Software Package
 
-This is the code repository for the WorldStrat dataset, used to generate the dataset and train several super-resolution benchmarks on it.
+This is the companion code repository for [the WorldStrat dataset](https://zenodo.org/deposit/6810792) and its article, used to generate the dataset and train several super-resolution benchmarks on it.
 
 # Quick Start
 Follow the Dataset Exploration notebook, or:
