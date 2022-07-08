@@ -1,4 +1,4 @@
-# WorldStrat
+# The WorldStrat Software Package
 
 This is the code repository for the WorldStrat dataset, used to generate the dataset and train several super-resolution benchmarks on it.
 
