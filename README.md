@@ -1,6 +1,6 @@
 # The WorldStrat Software Package
 
-This is the companion code repository for [the WorldStrat dataset](https://zenodo.org/record/6810792) and its article, used to generate the dataset and train several super-resolution benchmarks on it.
+This is the companion code repository for [the WorldStrat dataset](https://zenodo.org/record/6810792) and its article, used to generate the dataset and train several super-resolution benchmarks on it. The associated article and datasheet for dataset is [available on arXiv](https://arxiv.org/abs/2207.06418).
 
 # Quick Start
 Follow the Dataset Exploration notebook, or:
@@ -67,12 +67,17 @@ After that, you can also check out our source code which contains notebooks that
 If you use this package or the associated dataset, please kindly cite these following BibTeX entries:
 
 ```
-@article{cornebise_free_2022,
-  title = {Free {{High-Resolution Satellite Imagery}}: {{The WorldStrat Dataset}}},
-  author = {Cornebise, Julien and Orsolic, Ivan and Kalaitzis, Freddie},
+@misc{cornebise_open_2022,
+  title = {Open {{High-Resolution Satellite Imagery}}: {{The WorldStrat Dataset}} -- {{With Application}} to {{Super-Resolution}}},
+  author = {Cornebise, Julien and Or{\v s}oli{\'c}, Ivan and Kalaitzis, Freddie},
   year = {2022},
   month = jul,
-  journal = {Submitted, under review, arxiv preprint upcoming}
+  number = {arXiv:2207.06418},
+  eprint = {2207.06418},
+  eprinttype = {arxiv},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.2207.06418},
+  archiveprefix = {arXiv}
 }
 
 @article{cornebise_worldstrat_zenodo_2022,
