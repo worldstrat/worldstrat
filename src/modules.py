@@ -976,7 +976,7 @@ class BicubicUpscaledBaseline(nn.Module):
     """ Bicubic upscaled single-image baseline. """
 
     def __init__(
-        self, input_size, output_size, chip_size, interpolation="bicubic", **kws
+        self, input_size, output_size, chip_size, interpolation="bicubic", device=None, **kws
     ):
         """ Initialize the BicubicUpscaledBaseline.
 
@@ -1001,6 +1001,7 @@ class BicubicUpscaledBaseline(nn.Module):
         self.lr_bands = np.array(S2_ALL_12BANDS["true_color"]) - 1
         self.mean = JIF_S2_MEAN[self.lr_bands]
         self.std = JIF_S2_STD[self.lr_bands]
+        self.device = device
 
     def forward(self, x: Tensor) -> Tensor:
         """ Forward pass of the BicubicUpscaledBaseline.
@@ -1027,8 +1028,9 @@ class BicubicUpscaledBaseline(nn.Module):
 
         # Normalisation on the channel axis:
         # Add the mean and multiply by the standard deviation
-        x += torch.as_tensor(self.mean[None, None, ..., None, None]).to("cuda")
-        x *= torch.as_tensor(self.std[None, None, ..., None, None]).to("cuda")
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') if self.device is None else self.device
+        x += torch.as_tensor(self.mean[None, None, ..., None, None]).to(device)
+        x *= torch.as_tensor(self.std[None, None, ..., None, None]).to(device)
 
         # Convert to float, and scale to [0, 1]:
         x = x.float()
