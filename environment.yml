@@ -30,6 +30,7 @@ dependencies:
   - rasterio
   - kornia
   - lightning-bolts
+  - cudatoolkit
 
   # Because conda package is old (0.10.0 vs. 0.10.1)
   - pip:
