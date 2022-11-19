@@ -257,8 +257,8 @@ class SentinelCatalogue:
             self.data_collection,
             bbox=bounding_box,
             time=time_interval,
-            # distinct="date",
-            query={"eo:cloud_cover": {"lt": self.max_cloud_percentage}},
+            # distinct="date"
+            filter=f"eo:cloud_cover<{self.max_cloud_percentage}",
             fields={
                 "include": [
                     "id",
