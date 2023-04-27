@@ -3,7 +3,9 @@ wandb/
 lightning_logs/
 .dvc/
 data/*
-dataset/
+dataset/*
+dataset_download/*
+dataset_generation/stratification_datasets/*
 .vscode
 *__pycache__*
 
