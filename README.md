@@ -3,13 +3,15 @@
 This is the companion code repository for [the WorldStrat dataset](https://zenodo.org/record/6810792) and its article, used to generate the dataset and train several super-resolution benchmarks on it. The associated article and datasheet for dataset is [available on arXiv](https://arxiv.org/abs/2207.06418).
 
 # Quick Start
-Follow the Dataset Exploration notebook, or:
-- [Download and install Miniforge](https://github.com/conda-forge/miniforge/releases/tag/4.12.0-2).
-- Clone the repository: `git clone https://github.com/worldstrat/worldstrat`.
-- Install the environment: `mamba env create -n worldstrat --file environment.yml`.
-- [Download the dataset from Zenodo](https://zenodo.org/record/6810792) , or [from Kaggle](https://www.kaggle.com/datasets/jucor1/worldstrat).
-- Create an empty `dataset` folder in the repository root and unpack the dataset there.
-- Run the `Dataset Exploration` notebook, or any of the other notebooks, using the `worldstrat` environment.
+1. Download and install Mambaforge ([Windows](https://github.com/conda-forge/miniforge/releases/download/4.12.0-2/Mambaforge-4.12.0-2-Windows-x86_64.exe)/[Linux](https://github.com/conda-forge/miniforge/releases/download/4.12.0-2/Mambaforge-4.12.0-2-Linux-x86_64.sh)/[Mac OS X](https://github.com/conda-forge/miniforge/releases/download/4.12.0-2/Mambaforge-4.12.0-2-MacOSX-x86_64.sh)/[Mac OS X ARM](https://github.com/conda-forge/miniforge/releases/download/4.12.0-2/Mambaforge-4.12.0-2-MacOSX-arm64.sh)/[Other](https://github.com/conda-forge/miniforge/releases/tag/4.12.0-2))
+2. Open a Miniforge prompt or [initialise Mambaforge in your terminal/shell](https://docs.conda.io/projects/conda/en/latest/dev-guide/deep-dives/activation.html#conda-initialization) (conda init).
+3. Clone the repository: `git clone https://github.com/worldstrat/worldstrat`.
+4. Install the environment: `mamba env create -n worldstrat --file environment.yml`.
+5. Follow the instructions in the `Dataset Exploration` notebook using the `worldstrat` environment.
+6. Alternatively (manual):
+  1. [Download the dataset from Zenodo](https://zenodo.org/record/6810792), or [from Kaggle](https://www.kaggle.com/datasets/jucor1/worldstrat)
+  2. Create an empty `dataset` folder in the repository root (`worldstrat/dataset`) and unpack the dataset there.
+  3. Run the `Dataset Exploration` notebook, or any of the other notebooks, using the `worldstrat` environment.
 
 ## What is WorldStrat?
 
@@ -32,12 +34,16 @@ We hope to foster broad-spectrum applications of ML to satellite imagery, and po
 # Data versions and structure:
 The main repository for this dataset is [Zenodo](https://zenodo.org/record/6810792).
 It contains:
-- 12-bit radiometry high-resolution images in their raw format, downloaded directly from Airbus.
-- 12-bit radiometry high-resolution images [downloaded through and processed by SentinelHub](https://docs.sentinel-hub.com/api/latest/data/airbus/spot/).
-- 16 temporally-matched low-resolution Sentinel-2 Level-2A revisits for each high-resolution image.
-- 16 temporally-matched low-resolution Sentinel-2 Level-1C revisits for each high-resolution image.
+- [12-bit radiometry high-resolution images in their raw format](https://zenodo.org/record/6810792/files/hr_dataset_raw.tar.gz?download=1), downloaded directly from Airbus.
+- [12-bit radiometry high-resolution images](https://zenodo.org/record/6810792/files/hr_dataset.tar.gz?download=1) [downloaded through and processed by SentinelHub](https://docs.sentinel-hub.com/api/latest/data/airbus/spot/).
+- [16 temporally-matched low-resolution Sentinel-2 Level-2A revisits](https://zenodo.org/record/6810792/files/lr_dataset_l2a.tar.gz?download=1) for each high-resolution image.
+- [16 temporally-matched low-resolution Sentinel-2 Level-1C revisits](https://zenodo.org/record/6810792/files/lr_dataset_l1c.tar.gz?download=1) for each high-resolution image.
+- [The metadata about the dataset](https://zenodo.org/record/6810792/files/metadata.csv?download=1) (imaged locations coordinates, several classifications).
+- [The train/val/test split](https://zenodo.org/record/6810792/files/stratified_train_val_test_split.csv?download=1) used to train the super-resolution benchmarks.
+- [The scientific paper about the dataset and toolbox published and presented at NeurIPS 2022](https://zenodo.org/record/6810792/files/WorldStrat_article_and_datasheet.pdf?download=1).
 
-Due to Kaggle's size limitation of ~107 GB, we've uploaded what we call the "core dataset" there, which consists of:
+
+Due to Kaggle's size limitation of ~107 GB, [we've uploaded what we call the "core dataset" there](https://www.kaggle.com/datasets/jucor1/worldstrat), which consists of:
 
 - 12-bit radiometry high-resolution images, downloaded through SentinelHub's API.
 - 8 temporally-matched low-resolution Sentinel-2 Level-2A revisits for each high-resolution image.
