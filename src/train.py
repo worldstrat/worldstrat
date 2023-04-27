@@ -1,5 +1,15 @@
 #!/usr/bin/env python
+import sys
+import os
 
+# Get the current script's directory
+script_dir = os.path.dirname(os.path.realpath(__file__))
+
+# Get the root repository directory by going up one level from the script directory
+repo_root = os.path.dirname(script_dir)
+
+# Add the repository root to the Python path
+sys.path.append(repo_root)
 import pandas as pd
 import pytorch_lightning as pl
 import wandb
