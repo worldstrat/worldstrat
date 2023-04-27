@@ -4,9 +4,10 @@ from pathlib import Path
 import subprocess
 import zipfile
 import os
-from tqdm.notebook import tqdm
+from tqdm.auto import tqdm
 import rasterio
 from numpy import nan
+import requests
 
 LC_FILE_PATH = "dataset_generation/stratification_datasets/landcover/C3S-LC-L4-LCCS-Map-300m-P1Y-2020-v2.1.1.tif"
 SMOD_FILE_PATH = "dataset_generation/stratification_datasets/smod/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif"
@@ -95,24 +96,74 @@ class StratificationDatasets:
         description : str, optional
             Description string to display in the download progress bar, by default "Downloading dataset"
         """
+        
+
+
         parent_folder = Path(download_path).parent
         Path(parent_folder).mkdir(parents=True, exist_ok=True)
-        progress_bar = tqdm(total=100, desc=description)
-
-        def download_progress_hook(count, blockSize, totalSize):
-            percent = int(count * blockSize * 100 / totalSize)
-            progress_bar.update(percent - progress_bar.n)
-
         try:
             print(
                 f"Downloading the dataset to {download_path}. This might take a few minutes."
             )
-            urlretrieve(download_link, download_path, reporthook=download_progress_hook)
+            StratificationDatasets.download_file(download_link, download_path)
         except HTTPError as error:
             if error.code == 404 and "landcover" in download_path:
                 raise Warning(
                     "The download link has expired. Please generate a new one by visiting https://cds.climate.copernicus.eu/cdsapp#!/dataset/satellite-land-cover?tab=form and pass it to the download_and_prepare_landcover_dataset() function. The code was written using the 2020 v2.1.1 version of the dataset."
                 )
+            
+    @staticmethod
+    def download_file(url, destination, buffer_size=8192, max_retries=5):
+        """
+        Download a large file from a URL with a progress bar, resuming the download in case of a network error.
+
+        Parameters
+        ----------
+        url : str
+            The URL of the large file to download.
+        destination : str
+            The destination path for the downloaded file.
+        buffer_size : int, optional, default: 8192
+            The buffer size (in bytes) used for reading the file in chunks.
+            The default value is 8192.
+        max_retries : int, optional, default: 5
+            The maximum number of retries in case of a network error.
+
+        Examples
+        --------
+        >>> url = 'https://example.com/largefile.ext'
+        >>> destination = 'path/to/your/downloaded/largefile.ext'
+        >>> download_large_file(url, destination)
+        """
+
+        headers = {}
+        retries = 0
+
+        if os.path.exists(destination):
+            resume_position = os.path.getsize(destination)
+            headers['Range'] = f'bytes={resume_position}-'
+        else:
+            resume_position = 0
+
+        response = requests.get(url, headers=headers, stream=True, timeout=5)
+
+        file_size = int(response.headers.get('content-length', 0)) + resume_position
+
+        with open(destination, 'ab') as f:
+            while retries < max_retries:
+                try:
+                    for chunk in tqdm(response.iter_content(chunk_size=buffer_size),
+                                    initial=resume_position, total=file_size,
+                                    unit='B', unit_scale=True, desc=f'Downloading {destination}',
+                                    bar_format='{desc}: {percentage:3.0f}%|{bar:40}| {n_fmt} / {total_fmt}.'):
+                        f.write(chunk)
+                    break
+                except requests.exceptions.RequestException:
+                    retries += 1
+                    print(f'Retrying download, attempt {retries} of {max_retries}')
+
+        if retries >= max_retries:
+            print(f'Download failed after {max_retries} retries.')
 
     @staticmethod
     def unzip_dataset(zip_path, unzip_path):
