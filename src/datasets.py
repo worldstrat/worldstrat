@@ -1487,9 +1487,14 @@ def load_dataset_JIF(**kws):
     kws.setdefault("compute_median_std", False)
     kws["number_of_revisits"] = kws["revisits"]
     print(f"Using {kws['lr_bands_to_use']} LR bands.")
-    kws = set_train_test_val_split(
-        kws, os.path.join(kws["root"], "hr_dataset", f"{str(kws['radiometry_depth'])}bit")
-    )
+    if kws['radiometry_depth'] == 8:
+        kws = set_train_test_val_split(
+            kws, os.path.join(kws["root"], "hr_dataset", f"{str(kws['radiometry_depth'])}bit")
+        )
+    else:
+        kws = set_train_test_val_split(
+            kws, os.path.join(kws["root"], "hr_dataset")
+        )
     kws["root"] = set_subfolders_for_roots_JIF(kws["root"], kws["radiometry_depth"])
     transforms = make_transforms_JIF(**kws)
     hr_postfix, hr_pan_postfix = set_hr_postfix_based_on_radiometry(
@@ -1870,8 +1875,8 @@ def set_subfolders_for_roots_JIF(root, radiometry_depth):
         return {
             "lr": os.path.join(root, "lr_dataset", "*", "L2A", ""),
             "lrc": os.path.join(root, "lr_dataset", "*", "L2A", ""),
-            "hr": os.path.join(root, "hr_dataset","12bit", "*", ""),
-            "hr_pan": os.path.join(root, "hr_dataset", "12bit", "*", ""),
+            "hr": os.path.join(root, "hr_dataset", "*", ""),
+            "hr_pan": os.path.join(root, "hr_dataset", "*", ""),
             # "metadata": os.path.join(root, "hr_dataset",  "*", ""),
         }
 
