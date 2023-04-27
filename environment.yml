@@ -6,6 +6,7 @@ channels:
   - defaults
   
 dependencies:
+  - python==3.8
   # For dataset notebooks
   - geographiclib
   - tqdm
@@ -23,16 +24,16 @@ dependencies:
 
   # For training/inference
   - numpy
-  - pytorch-lightning
+  - pytorch-lightning==1.9.0
+  - torchvision=0.11.3
   - wandb
-  - torchvision # torchvision-cpu if cpu-only
   - setuptools==59.5.0
   - natsort
   - rasterio
-  - kornia
+  - kornia==0.6.3
   - lightning-bolts
   - cudatoolkit
-
+  - pip
   # Because conda package is old (0.10.0 vs. 0.10.1)
   - pip:
     - eo-learn
