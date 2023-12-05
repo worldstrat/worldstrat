@@ -24,7 +24,7 @@ def tv_loss(x: Tensor) -> Tensor:
         Tensor of shape (batch_size,).
     """
     height, width = x.shape[-2:]
-    return kornia.losses.total_variation(x) / (height * width)
+    return (kornia.losses.total_variation(x) / (height * width)).mean(dim=1)
 
 
 def ms_ssim_loss(y_hat, y, window_size):
