@@ -31,7 +31,7 @@ class AOIGenerator:
         self.load_pois(pois, aoi_name_prefix)
         self.aoi_area = aoi_area_sqkm
         self.aois = AOIGenerator.generate_aois_from_pois(self.pois, self.aoi_area)
-        self.aois["area"] = self.aoi_area
+        self.aois["area"] = [self.aoi_area]*len(self.pois)
 
     def load_pois(self, pois, aoi_name_prefix=None):
         """ Loads the points of interest into a Pandas DataFrame.
